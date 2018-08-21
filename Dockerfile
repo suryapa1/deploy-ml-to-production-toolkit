@@ -1,5 +1,6 @@
 # The base image to build the Docker container from
 FROM jupyter/datascience-notebook:177037d09156
+MAINTAINER Armen Donigian (donigian@gmail.com)
 
 # launchbot-specific labels
 LABEL name.launchbot.io="Deploy ML to Production Toolkit"
@@ -7,16 +8,24 @@ LABEL workdir.launchbot.io="/home/jovyan"
 LABEL description.launchbot.io="Deploy ML to Production Toolkit"
 LABEL 8888.port.launchbot.io="Start Tutorial"
 
+COPY . /home/jovyan
+USER root
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libx11-dev  \ 
+    git-core \
+    apt-utils \
+    g++ 
+RUN chmod -R 777 /home/jovyan
+
+USER jovyan
+RUN conda env create -f /home/jovyan/env.yml
+RUN /bin/bash -c "source activate py36_oreilly_ml_prod_course"
+
 #Set the working directory
 WORKDIR /home/jovyan/
 
-# Modules
-COPY requirements.txt /home/jovyan/requirements.txt
-RUN pip install -r /home/jovyan/requirements.txt
-
 # Add files
-COPY notebooks /home/jovyan/notebooks
-COPY data /home/jovyan/data
 COPY solutions /home/jovyan/solutions
 
 # Allow user to write to directory
