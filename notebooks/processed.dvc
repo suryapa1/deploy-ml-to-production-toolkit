@@ -1,0 +1,11 @@
+cmd: python ../src/models/Static_Model_Pitfalls_of_Model_Development.py
+deps:
+- md5: 7c91a8ec4c1f13dd7f4e34511bf1392c
+  path: ../src/models/Static_Model_Pitfalls_of_Model_Development.py
+- md5: a7a55040700152425ebf759d80c5bc9d
+  path: ../data/external/allyears2k.csv
+md5: 6e48d56b20a6f87dedc0e5e236c6e2cf
+outs:
+- cache: true
+  md5: bd86fd31ede4d494851fab78e8f340a0.dir
+  path: ../data/processed
