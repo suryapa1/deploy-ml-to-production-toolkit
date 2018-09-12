@@ -11811,13 +11811,13 @@ div#notebook {
 <td style="text-align:center">DayofMonth</td>
 <td>day of the month (1 to 31)</td>
 <td>Integer</td>
-<td></td>
+<td>Should this be ordinal or One Hot Encoded?</td>
 </tr>
 <tr>
 <td style="text-align:center">DayOfWeek</td>
 <td>day of the week</td>
 <td>Integer</td>
-<td></td>
+<td>Should this be ordinal or One Hot Encoded?</td>
 </tr>
 <tr>
 <td style="text-align:center">DepTime</td>
@@ -11925,13 +11925,13 @@ div#notebook {
 <td style="text-align:center">Cancelled</td>
 <td>cancellation status (stored as logical).</td>
 <td>Integer</td>
-<td>Should we bother predicting whether flight is delayed or not for a cancelled flight?</td>
+<td>Should we include cancelled flights in training set? Could these be bad labels?</td>
 </tr>
 <tr>
 <td style="text-align:center">CancellationCode</td>
 <td>cancellation code, if applicable</td>
 <td>String</td>
-<td>Should we bother predicting whether flight is delayed or not for a cancelled flight?</td>
+<td>Should we include cancelled flights in training set?  Could these be bad labels?</td>
 </tr>
 <tr>
 <td style="text-align:center">Diverted</td>

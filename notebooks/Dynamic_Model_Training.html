@@ -11790,79 +11790,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>wget https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/csv2vw
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>--2018-09-10 22:21:31--  https://raw.githubusercontent.com/jeroenjanssens/data-science-at-the-command-line/master/tools/csv2vw
-Resolving raw.githubusercontent.com... 151.101.0.133, 151.101.64.133, 151.101.128.133, ...
-Connecting to raw.githubusercontent.com|151.101.0.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 5464 (5.3K) [text/plain]
-Saving to: ‘csv2vw’
-
-csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s      
-
-2018-09-10 22:21:32 (21.7 MB/s) - ‘csv2vw’ saved [5464/5464]
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pwd
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/Users/arm/code/ML_Models_to_Production/notebooks
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11907,7 +11835,7 @@ csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -11923,7 +11851,7 @@ csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12104,7 +12032,7 @@ csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">columns</span>
@@ -12120,7 +12048,7 @@ csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12144,7 +12072,7 @@ csv2vw              100%[===================&gt;]   5.34K  --.-KB/s    in 0s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>csv2vw --help
@@ -12216,7 +12144,7 @@ Usage: csv2vw [options] [&lt;label_column&gt;] files...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>csv2vw -h -- -1 ../data/processed/train.csv &gt; ../data/processed/train.vw
@@ -12229,7 +12157,7 @@ Usage: csv2vw [options] [&lt;label_column&gt;] files...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head ../data/processed/train.vw
@@ -12269,7 +12197,7 @@ Usage: csv2vw [options] [&lt;label_column&gt;] files...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>sed <span class="s1">&#39;s/^2 /-1 /g&#39;</span> ../data/processed/train.vw &gt; ../data/processed/train_transformed.vw
@@ -12282,7 +12210,7 @@ Usage: csv2vw [options] [&lt;label_column&gt;] files...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head ../data/processed/train_transformed.vw
@@ -12322,7 +12250,7 @@ Usage: csv2vw [options] [&lt;label_column&gt;] files...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>vw --help
@@ -12495,7 +12423,7 @@ Output model:
                                         with numeric features
   --invert_hash arg                     Output human-readable final regressor 
                                         with feature names.  Computationally 
-                                        expensive.
+
   --save_resume                         save extra state so learning can be 
                                         resumed later with new data
   --preserve_performance_counters       reset performance counters when 
@@ -12706,7 +12634,7 @@ Cost-sensitive Active Learning:
                                         domination. Default 1
   --mellowness arg (=0.100000001)       mellowness parameter c_0. Default 0.1.
   --range_c arg (=0.5)                  parameter controlling the threshold for
-                                        per-label cost uncertainty. Default 
+
                                         0.5.
   --max_labels arg (=18446744073709551615)
                                         maximum number of label queries.
@@ -13037,7 +12965,7 @@ Input options:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>vw <span class="err">\</span>
