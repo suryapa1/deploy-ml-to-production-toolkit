@@ -39,5 +39,5 @@ EXPOSE 8888
 
 #RUN . activate py36_oreilly_ml_prod_course
 # Start the notebook server
-CMD [ "/bin/bash -c \"source activate py36_oreilly_ml_prod_course\" && jupyter notebook --no-browser --port 8888 --ip=* --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10"]
+CMD /bin/bash -c "source /opt/conda/bin/activate py36_oreilly_ml_prod_course" && jupyter notebook --no-browser --port 8888 --ip=* --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10 
 
