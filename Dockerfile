@@ -15,12 +15,13 @@ RUN apt-get update && apt-get install -y \
     libx11-dev  \ 
     git-core \
     apt-utils \
+    libboost-program-options-dev \ 
+    zlib1g-dev \
     g++ 
 RUN chmod -R 777 /home/jovyan
 
 USER jovyan
 RUN conda env create -f /home/jovyan/env.yml
-RUN /bin/bash -c "source activate py36_oreilly_ml_prod_course"
 
 #Set the working directory
 WORKDIR /home/jovyan/
@@ -34,10 +35,12 @@ RUN chown -R $NB_USER /home/jovyan \
     && chmod -R 774 /home/jovyan
 USER $NB_USER
 
+RUN pip install -r requirements.txt
 # Expose the notebook port
 EXPOSE 8888
 
-#RUN . activate py36_oreilly_ml_prod_course
+#RUN git clone git://github.com/JohnLangford/vowpal_wabbit.git && cd vowpal_wabbit && make && make install
 # Start the notebook server
-CMD /bin/bash -c "source /opt/conda/bin/activate py36_oreilly_ml_prod_course" && jupyter notebook --no-browser --port 8888 --ip=* --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10 
+CMD jupyter notebook --no-browser --port 8888 --ip=* --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True --NotebookApp.iopub_data_rate_limit=1.0e10
+
 
