@@ -28,11 +28,12 @@ WORKDIR /home/jovyan/
 
 # Add files
 COPY solutions /home/jovyan/solutions
+COPY data /home/jovyan/data
 
 # Allow user to write to directory
 USER root
 RUN chown -R $NB_USER /home/jovyan \
-    && chmod -R 774 /home/jovyan
+    && chmod -R 777 /home/jovyan
 USER $NB_USER
 
 RUN pip install -r requirements.txt
