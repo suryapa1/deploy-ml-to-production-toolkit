@@ -1,0 +1,53 @@
+numpy: 1.14.3
+pandas: 0.23.0
+sklearn: 0.19.1
+xgboost: 0.72
+
+Label Encode Target into Integers...
+
+Get Training Data...
+Original shape: (43978, 31)
+After columns dropped shape: (43978, 13)
+
+Naive One-Hot-Encode for features: ['UniqueCarrier', 'Dest', 'Origin']
+
+Total number of features before encoding: 13
+
+Total number of features after encoding: 286
+
+Label Encode Target into Integers...
+
+Get Training Data...
+Original shape: (43978, 31)
+After columns dropped shape: (43978, 13)
+
+Naive One-Hot-Encode for features: ['UniqueCarrier', 'Dest', 'Origin']
+
+Total number of features before encoding: 13
+
+Total number of features after encoding: 286
+[0]	train-error:0.355997
+[1]	train-error:0.34859
+
+Feature Importances...
+
+Feature Importances {'DayofMonth': 3, 'Year': 6, 'CRSArrTime': 6, 'CRSElapsedTime': 5, 'Cancelled': 7, 'Origin__AUS': 1, 'UniqueCarrier__HP': 3, 'Distance': 3, 'Origin__ATL': 1, 'CRSDepTime': 5, 'Origin__OKC': 1, 'Origin__SAT': 2, 'Origin__PIT': 1, 'DayOfWeek': 1, 'Origin__OAK': 1, 'Dest__SNA': 1, 'UniqueCarrier__WN': 1}
+Accuracy: 65.18%
+
+Confusion Matrix...
+[[3351 2870]
+ [1724 5249]]
+
+Classification Report...
+             precision    recall  f1-score   support
+
+          0       0.66      0.54      0.59      6221
+          1       0.65      0.75      0.70      6973
+
+avg / total       0.65      0.65      0.65     13194
+
+Finished saving training design matrix: ../data/processed/airlines_training_examples.pkl
+Finished saving training targets: ../data/processed/airlines_training_targets.pkl
+Finished saving test design matrix: ../data/processed/airlines_training_examples.pkl
+Finished saving test targets: ../data/processed/airlines_training_targets.pkl
+Pipeline Completed
